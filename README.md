@@ -1,8 +1,26 @@
+<div align="center">
+
+<img src="https://img.shields.io/badge/BCA%206th%20Semester-NSU%20Jamshedpur-1a6b4a?style=flat-square&labelColor=0f0f0f" />
+<img src="https://img.shields.io/badge/Stack-MERN-1a6b4a?style=flat-square&labelColor=0f0f0f" />
+<img src="https://img.shields.io/badge/AI-Google%20Gemini-1a6b4a?style=flat-square&labelColor=0f0f0f" />
+<img src="https://img.shields.io/badge/Payments-Stripe-1a6b4a?style=flat-square&labelColor=0f0f0f" />
+<img src="https://img.shields.io/badge/Auth-Firebase-1a6b4a?style=flat-square&labelColor=0f0f0f" />
+
+<br/><br/>
+
 # AI Exam Notes Generator
 
-> An AI-powered web application that automatically generates structured, exam-oriented study notes for students using Google Gemini AI.
+**An AI-powered SaaS web application that automatically generates structured, exam-oriented study notes using Google Gemini AI.**
 
-A BCA 6th Semester Project — Netaji Subhas University, Jamshedpur (2023–2026)
+*BCA 6th Semester Project — Netaji Subhas University, Jamshedpur (2023–2026)*
+
+</div>
+
+---
+
+## About
+
+Students enter a topic, class level, and exam type — the system produces comprehensive notes, block diagrams, charts, revision points, and exam-style questions tailored to their needs. All within minutes, powered by Google Gemini AI.
 
 ---
 
@@ -26,61 +44,56 @@ A BCA 6th Semester Project — Netaji Subhas University, Jamshedpur (2023–2026
 
 ---
 
-## About the Project
-
-The AI Exam Notes Generator is a web-based SaaS application that leverages Artificial Intelligence to automatically generate structured, exam-oriented study notes for students. Built using the **MERN Stack** and integrated with the **Google Gemini AI API**, the platform produces high-quality notes, diagrams, charts and revision points based on any topic provided by the user.
-
-Students simply enter a topic, their class level and their examination type — and the system automatically produces comprehensive notes tailored to their needs.
-
----
-
 ## Features
 
-- **AI-Powered Notes** — Generate comprehensive exam notes on any topic instantly using Google Gemini AI
-- **Exam Customization** — Supports CBSE, AKTU and other examination boards
-- **Visual Content** — Auto-generates block diagrams, bar charts, pie charts and line charts
-- **Revision Points** — Priority-based revision points with 1-star, 2-star and 3-star importance levels
-- **Question Sets** — Short answer, long answer and diagram-based questions
-- **Quick Revision Mode** — 5-minute revision summary of the most important points
-- **Notes History** — All previously generated notes saved and accessible anytime
-- **PDF Download** — Download generated notes as formatted PDF documents for offline study
-- **Credit System** — 100 free credits on registration; additional credits purchasable via Stripe
-- **Secure Login** — Google OAuth 2.0 authentication via Firebase
+| # | Feature | Description |
+|---|---|---|
+| 01 | **AI Notes** | Comprehensive exam notes on any topic via Gemini AI |
+| 02 | **Charts & Diagrams** | Auto-generated block diagrams, bar, pie & line charts |
+| 03 | **Priority Revision Points** | 1-star, 2-star, 3-star importance levels for focused revision |
+| 04 | **Exam Q&A Sets** | Short, long answer & diagram-based questions |
+| 05 | **5-Min Revision Mode** | Condensed summary of the most important points |
+| 06 | **Notes History** | All generated notes saved and accessible anytime |
+| 07 | **PDF Download** | Download formatted PDF for offline study |
+| 08 | **Credit System** | 100 free credits on sign-up; purchase more via Stripe |
+| 09 | **Google Login** | Secure OAuth 2.0 authentication via Firebase |
 
 ---
 
 ## Tech Stack
 
 ### Frontend
-- React.js
-- Tailwind CSS
-- JavaScript (ES6+)
-- Recharts (for data visualization)
+- **React.js** — Single-page application UI with component-based architecture
+- **Tailwind CSS** — Responsive styling with utility-first CSS
+- **JavaScript (ES6+)** — Client-side logic and API communication
+- **Recharts** — Bar, pie, and line chart rendering
 
 ### Backend
-- Node.js
-- Express.js
+- **Node.js** — Server-side JavaScript runtime
+- **Express.js** — RESTful API routing and middleware
 
 ### Database
-- MongoDB (MongoDB Atlas for cloud hosting)
+- **MongoDB** (MongoDB Atlas) — NoSQL database for users, notes, and transactions
 
-### AI Integration
-- Google Gemini API
-
-### Authentication
-- Firebase (Google OAuth 2.0)
-
-### Payment Gateway
-- Stripe (with webhook support)
-
-### Deployment
-- Render (Frontend + Backend)
+### Services
+- **Google Gemini API** — AI-powered note, diagram, and chart generation
+- **Firebase** — Google OAuth 2.0 authentication
+- **Stripe** — Credit purchases with webhook support
+- **Render** — Frontend and backend cloud deployment
 
 ### Development Tools
-- VS Code
-- Git & GitHub
-- Postman
-- MongoDB Compass
+- VS Code · Git & GitHub · Postman · MongoDB Compass
+
+---
+
+## Database Structure
+
+| Collection | Description |
+|---|---|
+| `users` | User profile, email and credit balance |
+| `notes` | Generated notes with topic, content, diagrams and charts |
+| `transactions` | Payment records and Stripe session data |
+| `creditplans` | Available credit purchase plans and pricing |
 
 ---
 
@@ -99,15 +112,15 @@ Students simply enter a topic, their class level and their examination type — 
 
 ---
 
-## How to Run Locally
+## Run Locally
 
-### 1. Clone the Repository
+### 1. Clone the repository
 ```bash
 git clone https://github.com/YOUR_USERNAME/ai-exam-notes-generator.git
 cd ai-exam-notes-generator
 ```
 
-### 2. Install Dependencies
+### 2. Install dependencies
 
 **Backend:**
 ```bash
@@ -121,10 +134,11 @@ cd client
 npm install
 ```
 
-### 3. Set Up Environment Variables
+### 3. Set up environment variables
 
 Create a `.env` file in the `/server` folder:
-```
+
+```env
 MONGODB_URI=your_mongodb_connection_string
 GEMINI_API_KEY=your_google_gemini_api_key
 STRIPE_SECRET_KEY=your_stripe_secret_key
@@ -132,7 +146,7 @@ STRIPE_WEBHOOK_SECRET=your_stripe_webhook_secret
 FIREBASE_PROJECT_ID=your_firebase_project_id
 ```
 
-### 4. Start the Application
+### 4. Start the application
 
 **Backend:**
 ```bash
@@ -150,25 +164,6 @@ The app will run at `http://localhost:3000`
 
 ---
 
-## Database Structure
-
-The MongoDB database contains 4 collections:
-
-| Collection | Description |
-|---|---|
-| `users` | Stores user profile, email and credit balance |
-| `notes` | Stores all generated notes with topic, content, diagrams and charts |
-| `transactions` | Stores payment records and Stripe session data |
-| `creditplans` | Stores available credit purchase plans |
-
----
-
-## Project Synopsis
-
-This project was submitted as a Project Synopsis for the partial fulfillment of the requirement for the degree of Bachelor of Computer Applications (BCA) at Netaji Subhas University, Jamshedpur for the Academic Session 2023–2026.
-
----
-
 ## References
 
 - [React.js Documentation](https://reactjs.org)
@@ -181,6 +176,10 @@ This project was submitted as a Project Synopsis for the partial fulfillment of 
 
 ---
 
-## License
+<div align="center">
 
-This project is developed for academic purposes as part of the BCA program at Netaji Subhas University, Jamshedpur.
+*Academic project — BCA programme, Netaji Subhas University, Jamshedpur*
+&nbsp;·&nbsp;
+*Academic use only*
+
+</div>
